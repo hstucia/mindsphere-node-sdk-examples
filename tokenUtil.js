@@ -9,7 +9,7 @@ const token = {
     APP: 'APP'
 };
 
-let proxyValue =  'http://194.138.0.25:9400';
+let proxyValue =  process.env.MDSP_PROXY;
 
 let tokenType = token.USER;
 
@@ -30,7 +30,8 @@ async function getToken(req, res) {
 
 function getConfig(hostname) {
     let config = null;
-    if (hostname == 'localhost') {
+    //if local and proxy configured
+    if (hostname == 'localhost' && proxyValue) {
         config = new ClientConfig({ proxy: proxyValue, timeout: 1000000 });
     } else {
         config = new ClientConfig({ timeout: 1000000 });
