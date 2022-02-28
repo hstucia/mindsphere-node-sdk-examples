@@ -4,7 +4,7 @@
   "description": "Example Project to Demonstrate use of Mindsphere SDK for NodeJS",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "npx env-cmd node app.js"
   },
   "dependencies": {
     "assetmanagement-sdk": "file:packages/assetmanagement-sdk-3.9.0.tgz",
